@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
-import { View ,Text, ImageBackground,Image,TouchableOpacity } from 'react-native'
+import { ScrollView, View ,Text, ImageBackground,Image,TouchableOpacity } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons';
 import styles from './styles'
+import Menu from "../Menu/index"
 
 const CarItem = () => {
     const [locked,setLocked] = useState(true)
@@ -41,6 +42,8 @@ const CarItem = () => {
             <View style={styles.status}>
                 <Text style={styles.statusText}>Parked</Text>
             </View>
+            <ScrollView>
+            {/* controls */}
             <View style={styles.controls}>
                 <TouchableOpacity>
                     <View style={styles.controlsButton}>
@@ -60,6 +63,8 @@ const CarItem = () => {
                     </View>
                 </TouchableOpacity>
             </View>
+                <Menu />
+            </ScrollView>
         </View>
     )
 };

@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     status:{
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 180,
+        // marginTop: 180,
     },
     statusText:{
         fontSize: 20,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     controls:{
         flexDirection: "row",
         justifyContent: "center",
-        marginTop: 20,
+        marginTop: 170,
     },
     controlsButton:{
         borderWidth: 1,
