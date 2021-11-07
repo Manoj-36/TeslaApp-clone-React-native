@@ -1,9 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { View ,Text, ImageBackground,Image,TouchableOpacity } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons';
 import styles from './styles'
 
 const CarItem = () => {
+    const [locked,setLocked] = useState(true)
+    const clickLock = () => {
+        if(locked){
+            setLocked(false)
+        }else{
+            setLocked(true)
+        }
+    }
     return (
         <View style={styles.carContainer}>
             <ImageBackground 
@@ -44,9 +52,11 @@ const CarItem = () => {
                         <FontAwesome5 name="key" size={34} color="white" /> 
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={clickLock}
+                >
                     <View style={styles.controlsButton}>
-                        <FontAwesome5 name="lock" size={34} color="white" />
+                        <FontAwesome5 name={locked ? "lock" : "unlock-alt"} size={34} color="white" />
                     </View>
                 </TouchableOpacity>
             </View>
